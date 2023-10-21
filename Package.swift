@@ -1,25 +1,21 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 
 import PackageDescription
 
 let package = Package(
   name: "swift-html-vapor",
   platforms: [
-    .macOS(.v10_15)
+    .macOS(.v11)
   ],
   products: [
     .library(
       name: "HtmlVaporSupport",
       targets: ["HtmlVaporSupport"]
     ),
-    .executable(
-      name: "HtmlVaporSupportExample",
-      targets: ["HtmlVaporSupportExample"]
-    ),
   ],
   dependencies: [
-    .package(url: "https://github.com/lukepistrol/swift-html", branch: "main"),
-    .package(url: "https://github.com/vapor/vapor", from: "4.0.0"),
+    .package(url: "https://github.com/lukepistrol/swift-html.git", branch: "main"),
+    .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
   ],
   targets: [
     .target(
@@ -28,14 +24,6 @@ let package = Package(
         .product(name: "Html", package: "swift-html"),
         .product(name: "Vapor", package: "vapor"),
       ]
-    ),
-    .testTarget(
-      name: "HtmlVaporSupportTests",
-      dependencies: ["HtmlVaporSupport"]
-    ),
-    .target(
-      name: "HtmlVaporSupportExample",
-      dependencies: ["HtmlVaporSupport"]
     ),
   ]
 )
