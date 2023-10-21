@@ -18,7 +18,7 @@ let package = Package(
     ),
   ],
   dependencies: [
-    .package(url: "https://github.com/lukepistrol/swift-html", from: "0.4.0"),
+    .package(url: "https://github.com/lukepistrol/swift-html", branch: "main"),
     .package(url: "https://github.com/vapor/vapor", from: "4.0.0"),
   ],
   targets: [
